@@ -13,6 +13,7 @@ import Skiing from "./components/sections/Skiing";
 
 // TODO list:
 // 1. If u choose light/dark-mode, it should set in local storage and use that instead of your 'default'?
+// 2. Finish rest of components
 
 function App() {
   const pageContent: ReactNode[] = [
