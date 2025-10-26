@@ -11,6 +11,9 @@ import Education from "./components/sections/Education";
 import Projects from "./components/sections/Projects";
 import Skiing from "./components/sections/Skiing";
 
+// TODO list:
+// 1. If u choose light/dark-mode, it should set in local storage and use that instead of your 'default'?
+
 function App() {
   const pageContent: ReactNode[] = [
     <Intro />,
