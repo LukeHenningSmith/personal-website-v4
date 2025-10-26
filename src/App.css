@@ -61,7 +61,7 @@ body {
   stroke-linejoin: round;
   stroke-dasharray: 1200;
   stroke-dashoffset: 1200;
-  animation: draw 20s cubic-bezier(0.6, 0, 0.4, 1) var(--delay, 0s) 1 forwards;
+  animation: draw 30s cubic-bezier(0.6, 0, 0.4, 1) var(--delay, 0s) 1 forwards;
 
   /* allow per-track stagger via --delay set on the parent group */
   animation-delay: var(--delay, 0s);

@@ -49,7 +49,7 @@ function Intro() {
             key={tech.id}
             variant={"default"}
             size={"sm"}
-            className="cursor-pointer bg-secondary text-muted-foreground hover:text-primary hover:bg-secondary"
+            className="cursor-pointer dark:bg-secondary bg-[oklch(0.9_0_0)] text-muted-foreground hover:text-primary hover:bg-secondary hover:bg-[oklch(0.92_0_0)]"
             onClick={() => {
               const newWindow = window.open(tech.url, "_blank");
               if (newWindow) newWindow.opener = null;
