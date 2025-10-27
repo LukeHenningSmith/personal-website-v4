@@ -66,13 +66,12 @@ function Header() {
 
         <div className="flex justify-end">
           <div className="flex items-center">
-            {renderTextButton({ id: "experience", label: "Experience" })}
-
-            {renderTextButton({ id: "education", label: "Education" })}
-
-            {renderTextButton({ id: "projects", label: "Projects" })}
-
-            {renderTextButton({ id: "skiing", label: "Skiing" })}
+            <div className="hidden min-[640px]:flex items-center">
+              {renderTextButton({ id: "experience", label: "Experience" })}
+              {renderTextButton({ id: "education", label: "Education" })}
+              {renderTextButton({ id: "projects", label: "Projects" })}
+              {renderTextButton({ id: "skiing", label: "Skiing" })}
+            </div>
 
             {renderIconButton({
               icon: <Linkedin />,
