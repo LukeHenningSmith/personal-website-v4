@@ -58,7 +58,7 @@ export function Experience() {
       <LinkableHeading id="experience">Experience</LinkableHeading>
 
       {/* Company */}
-      <div className="flex gap-2 text-muted-foreground">
+      <div className="flex gap-1 text-muted-foreground">
         <div className="flex mx-1 w-[60px] align-middle justify-center">
           <img className="w-[50px]" src="/cba-logo.svg" />
         </div>
@@ -75,8 +75,8 @@ export function Experience() {
       </div>
 
       {/* Role 1 */}
-      <div className="flex gap-2 text-muted-foreground ">
-        <div className="flex mx-2 w-[40px]">
+      <div className="flex gap-1 text-muted-foreground ">
+        <div className="flex mx-1 w-[60px]">
           <div className="flex w-full justify-center mt-1.75 relative">
             <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground" />
             <div className="absolute top-4 w-[1px] h-full bg-muted-foreground" />
@@ -107,8 +107,8 @@ export function Experience() {
       </div>
 
       {/* Role 2 */}
-      <div className="flex gap-2 text-muted-foreground">
-        <div className="flex mx-2 w-[40px]">
+      <div className="flex gap-1 text-muted-foreground">
+        <div className="flex mx-1 w-[60px]">
           <div className="flex w-full justify-center mt-1.75 relative">
             <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground" />
             <div className="absolute top-4 w-[1px] h-full bg-muted-foreground" />
@@ -140,8 +140,8 @@ export function Experience() {
       </div>
 
       {/* Role 3 */}
-      <div className="flex gap-2 text-muted-foreground">
-        <div className="flex mx-2 w-[40px]">
+      <div className="flex gap-1 text-muted-foreground">
+        <div className="flex mx-1 w-[60px]">
           <div className="flex w-full justify-center mt-1.75 relative">
             <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground" />
           </div>

@@ -63,7 +63,15 @@ function Header() {
     <>
       <header className="w-full text-foreground p-4">
         <div className="flex justify-between items-center">
-          <h1 className="text-xl font-semibold w-14">
+          <h1
+            className="text-xl font-semibold w-14 cursor-pointer"
+            onClick={() => {
+              if (window.history?.replaceState) {
+                window.history.replaceState(null, "", window.location.pathname);
+              } else window.location.hash = "";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <img
               src="/logo-light.svg"
               alt="Logo"

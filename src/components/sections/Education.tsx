@@ -5,9 +5,18 @@ export function Education() {
     <div className="flex flex-col gap-4">
       <LinkableHeading id="education">Education</LinkableHeading>
 
-      <div className="flex gap-2 text-muted-foreground">
+      <div className="flex gap-1 text-muted-foreground">
         <div className="flex mx-1 w-[60px] align-middle justify-center">
-          <img className="" src="/usyd-logo.svg" />
+          <img
+            src="/usyd-logo-light.svg"
+            alt="Logo"
+            className="w-[50px] block dark:hidden"
+          />
+          <img
+            src="/usyd-logo-dark.svg"
+            alt="Logo"
+            className="w-[50px] hidden dark:block"
+          />
         </div>
 
         <div className="flex-1">
@@ -21,7 +30,7 @@ export function Education() {
           </div>
         </div>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-1">
         <div className="flex mx-1 w-[60px] align-middle justify-center"></div>
 
         <div className="flex-1">
