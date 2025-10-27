@@ -64,7 +64,7 @@ function Header() {
       <header className="w-full text-foreground p-4">
         <div className="flex justify-between items-center">
           <h1
-            className="text-xl font-semibold w-14 cursor-pointer"
+            className="text-xl font-semibold w-14 cursor-pointer opacity-70 hover:opacity-80"
             onClick={() => {
               if (window.history?.replaceState) {
                 window.history.replaceState(null, "", window.location.pathname);
