@@ -6,7 +6,7 @@ export function Intro() {
     {
       id: "typescript",
       label: "Typescript",
-      imgSrc: "/tech-icons/typescript-logo.svg",
+      imgSrc: "/tech-icons/typescript-logo.png",
       url: "https://www.typescriptlang.org/",
     },
     {
