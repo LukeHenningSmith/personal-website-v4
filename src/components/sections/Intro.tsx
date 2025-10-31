@@ -24,7 +24,7 @@ export function Intro() {
     {
       id: "aws",
       label: "AWS",
-      imgSrc: "/tech-icons/aws-logo.svg",
+      imgSrc: "/tech-icons/aws-logo.png",
       url: "https://www.aws.com/",
     },
     // {

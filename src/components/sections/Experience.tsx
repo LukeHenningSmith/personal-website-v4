@@ -42,13 +42,13 @@ export function Experience() {
     {
       id: "aws",
       label: "AWS",
-      imgSrc: "/tech-icons/aws-logo.svg",
+      imgSrc: "/tech-icons/aws-logo.png",
       url: "https://www.aws.com/",
     },
     {
       id: "docker",
       label: "Docker",
-      imgSrc: "/tech-icons/docker-logo.svg",
+      imgSrc: "/tech-icons/docker-logo.png",
       url: "https://www.docker.com/",
     },
   ];
@@ -59,8 +59,12 @@ export function Experience() {
 
       {/* Company */}
       <div className="flex gap-1 text-muted-foreground">
-        <div className="flex mx-1 w-[60px] align-middle justify-center">
-          <img className="w-[50px]" src="/cba-logo.svg" />
+        <div className="flex mx-2 w-[50px] items-center justify-center">
+          <img
+            className="w-[50px] h-auto object-contain"
+            src="/cba-logo.png"
+            alt="Commonwealth Bank logo"
+          />
         </div>
 
         <div className="flex-1">

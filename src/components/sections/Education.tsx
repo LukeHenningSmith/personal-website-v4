@@ -6,16 +6,17 @@ export function Education() {
       <LinkableHeading id="education">Education</LinkableHeading>
 
       <div className="flex gap-1 text-muted-foreground">
-        <div className="flex mx-1 w-[60px] align-middle justify-center">
+        <div className="flex mx-2 w-[50px] align-middle justify-center">
           <img
-            src="/usyd-logo-light.svg"
+            src="/usyd-logo-light.png"
             alt="Logo"
-            className="w-[50px] block dark:hidden"
+            // className="w-[50px] block dark:hidden"
+            className="w-[50px] h-auto object-contain block dark:hidden"
           />
           <img
-            src="/usyd-logo-dark.svg"
+            src="/usyd-logo-dark.png"
             alt="Logo"
-            className="w-[50px] hidden dark:block"
+            className="w-[50px] h-auto object-contain hidden dark:block"
           />
         </div>
 
