@@ -21,9 +21,7 @@ function App() {
   }[] = [
     { key: "intro", node: Intro },
     { key: "experience", node: Experience },
-    { key: "education2", node: Education },
-    { key: "experience2", node: Experience },
-    { key: "education3", node: Education },
+    { key: "education", node: Education },
     { key: "projects", node: Projects },
     { key: "skiing", node: Skiing },
   ];
