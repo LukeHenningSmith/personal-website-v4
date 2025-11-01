@@ -5,7 +5,6 @@ import { ArrowUp } from "lucide-react";
 
 export default function ScrollTop() {
   const [visible, setVisible] = useState(false);
-  const [prefersReduced, setPrefersReduced] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setVisible(window.scrollY > 200);
@@ -14,34 +13,11 @@ export default function ScrollTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    try {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const set = () => setPrefersReduced(Boolean(mq.matches));
-      set();
-      const handler = () => set();
-      if (mq.addEventListener) mq.addEventListener("change", handler);
-      else mq.addListener(handler);
-      return () => {
-        if (mq.removeEventListener) mq.removeEventListener("change", handler);
-        else mq.removeListener(handler);
-      };
-    } catch {
-      // ignore in environments without matchMedia
-    }
-  }, []);
-
   const handleClick = () => {
-    if (!prefersReduced) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.scrollTo(0, 0);
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const transition = prefersReduced
-    ? { duration: 0 }
-    : { duration: 0.2, ease: [0.2, 0.8, 0.2, 1] as const };
+  const transition = { duration: 0.2, ease: [0.2, 0.8, 0.2, 1] as const };
 
   return (
     <AnimatePresence>
