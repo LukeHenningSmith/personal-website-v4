@@ -9,10 +9,12 @@ import {
   TAILWINDCSS_SKILL,
   VITEST_SKILL,
   VITE_SKILL,
+  AWS_SKILL,
 } from "../utility/skills/constants";
 import { Button } from "../ui/button";
-import { Github } from "lucide-react";
-import type { ReactNode } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type BulletPart = string | { label: string; url: string };
 
@@ -25,6 +27,7 @@ export type ProjectConfig = {
   bullets: BulletPart[][]; // each bullet is an array of parts (strings or link objects)
   skills?: string[];
   sourceUrl?: string;
+  liveUrl?: string;
 };
 
 export const PROJECTS: ProjectConfig[] = [
@@ -69,6 +72,28 @@ export const PROJECTS: ProjectConfig[] = [
     ],
     sourceUrl: "https://github.com/LukeHenningSmith/wyd",
   },
+  {
+    key: "personal-website",
+    title: "Personal Website",
+    subtitle: "Website",
+    year: "2025",
+    logo: (
+      <>
+        <img src="/logo-light.svg" alt="Logo" className="block dark:hidden" />
+        <img src="/logo-dark.svg" alt="Logo" className="hidden dark:block" />
+      </>
+    ),
+    bullets: [
+      ["A website to showcase my projects, experience, skills and hobbies"],
+      ["Custom deployed and hosted on AWS using S3, CloudFront and Route53"],
+      [
+        "Built with a focus on performance, animation, mobile support and modern design principles",
+      ],
+    ],
+    skills: [AWS_SKILL, TS_SKILL, REACT_SKILL, TAILWINDCSS_SKILL],
+    // sourceUrl: "https://github.com/LukeHenningSmith/wyd", //TODO
+    liveUrl: "https://lukehs.com",
+  },
 ];
 
 function renderBullet(parts: BulletPart[], idx: number) {
@@ -96,13 +121,25 @@ function renderBullet(parts: BulletPart[], idx: number) {
 }
 
 export function Projects({ animationOffset }: { animationOffset?: number }) {
-  const renderProject = (project: ProjectConfig) => {
+  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
+
+  const handleTooltipOpenChange = (v: boolean) => {
+    if (!v) setIsTooltipOpen(false);
+  };
+
+  const renderProject = (project: ProjectConfig, index: number) => {
     const skills: SkillItem[] = (project.skills || []).map(
       (s: any) => SKILLS[s as keyof typeof SKILLS]
     );
 
     return (
-      <FadeUp key={project.key} delay={animationOffset}>
+      <FadeUp
+        key={project.key}
+        delay={
+          (animationOffset ?? 0) +
+          index * ((animationOffset ?? 0) / PROJECTS.length)
+        }
+      >
         <div className="flex flex-col gap-2 text-muted-foreground">
           <div className="flex gap-2">
             <div className="flex mx-2 w-[50px] items-center justify-center">
@@ -129,26 +166,71 @@ export function Projects({ animationOffset }: { animationOffset?: number }) {
               <SkillsContainer skills={skills} />
             </div>
 
-            {project.sourceUrl ? (
-              <div>
-                <Button
-                  variant={"outline"}
-                  size={"sm"}
-                  title="View source code on GitHub"
-                  className="cursor-pointer text-muted-foreground bg-transparent 
+            <div className="flex gap-2">
+              {project.sourceUrl ? (
+                <div>
+                  <Button
+                    variant={"outline"}
+                    size={"sm"}
+                    title="View source code on GitHub"
+                    className="cursor-pointer text-muted-foreground bg-transparent 
                 hover:text-[#F05033] hover:bg-[#F05033]/10
                 hover:border-[#F05033] dark:hover:text-[#F05033] dark:bg-transparent 
                 dark:hover:bg-[#F05033]/10 dark:hover:border-[#F05033] transition-colors duration-200 ease-in-out"
-                  onClick={() => {
-                    const newWindow = window.open(project.sourceUrl, "_blank");
-                    if (newWindow) newWindow.opener = null;
-                  }}
-                >
-                  <Github />
-                  Source code
-                </Button>
-              </div>
-            ) : null}
+                    onClick={() => {
+                      const newWindow = window.open(
+                        project.sourceUrl,
+                        "_blank"
+                      );
+                      if (newWindow) newWindow.opener = null;
+                    }}
+                  >
+                    <Github />
+                    Source code
+                  </Button>
+                </div>
+              ) : null}
+
+              {project.liveUrl ? (
+                <div>
+                  <Tooltip
+                    open={isTooltipOpen}
+                    onOpenChange={handleTooltipOpenChange}
+                  >
+                    <TooltipTrigger asChild>
+                      <Button
+                        variant={"outline"}
+                        size={"sm"}
+                        title="View project"
+                        className="group relative cursor-pointer text-muted-foreground bg-transparent hover:text-blue-600 hover:bg-blue-600/10 hover:border-blue-600 dark:hover:text-blue-300 dark:bg-transparent dark:hover:bg-blue-600/10 dark:hover:border-blue-600 transition-colors duration-200 ease-in-out"
+                        onClick={() => {
+                          if (project.liveUrl === "https://lukehs.com") {
+                            setIsTooltipOpen(true);
+                            window.setTimeout(
+                              () => setIsTooltipOpen(false),
+                              1400
+                            );
+                          } else {
+                            const newWindow = window.open(
+                              project.liveUrl,
+                              "_blank"
+                            );
+                            if (newWindow) newWindow.opener = null;
+                          }
+                        }}
+                      >
+                        <ExternalLink />
+                        View project
+                      </Button>
+                    </TooltipTrigger>
+
+                    <TooltipContent side="bottom" align="center">
+                      You are already here!
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
       </FadeUp>
@@ -158,7 +240,7 @@ export function Projects({ animationOffset }: { animationOffset?: number }) {
   return (
     <Section id="projects" title="Projects" animationOffset={animationOffset}>
       <div className="flex flex-col gap-6">
-        {PROJECTS.map((p) => renderProject(p))}
+        {PROJECTS.map((p, i) => renderProject(p, i))}
       </div>
     </Section>
   );
