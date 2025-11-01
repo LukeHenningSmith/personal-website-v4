@@ -2,10 +2,13 @@ import type { SkillItem } from "@/types";
 import {
   AWS_SKILL,
   DOCKER_SKILL,
+  GITHUB_ACTIONS_SKILL,
+  PLAYWRIGHT_SKILL,
   PYTHON_SKILL,
   REACT_SKILL,
   SKILLS,
   TS_SKILL,
+  VITEST_SKILL,
 } from "../utility/skills/constants";
 import { SkillsContainer } from "../utility/skills/SkillsContainer";
 import { Section } from "../utility/Section";
@@ -41,23 +44,27 @@ export function Experience({ animationOffset }: { animationOffset?: number }) {
     return years > 0 ? `${yearText} ${monthText}` : monthText;
   }
 
-  const skills: SkillItem[] = [
-    SKILLS[AWS_SKILL],
-    SKILLS[REACT_SKILL],
-    SKILLS[TS_SKILL],
-    SKILLS[PYTHON_SKILL],
-    SKILLS[DOCKER_SKILL],
-  ];
-
-  // configurable roles data (customise content here)
   const roles: RoleConfig[] = [
     {
       key: "role-1",
       title: "Software Engineer",
       employmentType: "Full-time",
       duration: `Jul 2025 - Present · ${calculateDurationFrom("2025-06-30")}`,
-      bullets: ["Frontend lead for the new IB&M credit origination platform"],
-      skills,
+      bullets: [
+        "Frontend lead for the new IB&M credit origination web platform",
+        "Continued to support and add new frontend features to my delivered IB&M tool based on user feedback",
+        "Undertook AWS training and certification to support the bank-wide migration to AWS",
+        "Responsible for mentoring and supporting new members of the team with onboarding, best practices and code reviews",
+      ],
+      skills: [
+        SKILLS[REACT_SKILL],
+        SKILLS[TS_SKILL],
+        SKILLS[VITEST_SKILL],
+        SKILLS[PLAYWRIGHT_SKILL],
+        SKILLS[DOCKER_SKILL],
+        SKILLS[GITHUB_ACTIONS_SKILL],
+        SKILLS[AWS_SKILL],
+      ],
     },
     {
       key: "role-2",
@@ -65,9 +72,18 @@ export function Experience({ animationOffset }: { animationOffset?: number }) {
       employmentType: "Full-time",
       duration: "Aug 2024 - June 2025 · 11 mos",
       bullets: [
-        "Undertook the graduate-level role full-time during my final five months of university",
+        "Continued frontend web development for the IB&M tool I delivered during my internship under the guidance of senior engineers and in collaboration with PO, UX, business analysts and users",
+        "Created a comprehensive suite of unit and integration tests (in Vitest & Playwright) that ensured zero frontend-caused downtime post-launch",
+        "Balanced the full-time graduate-level role during my final five months of university",
       ],
-      skills,
+      skills: [
+        SKILLS[REACT_SKILL],
+        SKILLS[TS_SKILL],
+        SKILLS[VITEST_SKILL],
+        SKILLS[PLAYWRIGHT_SKILL],
+        SKILLS[DOCKER_SKILL],
+        SKILLS[GITHUB_ACTIONS_SKILL],
+      ],
     },
     {
       key: "role-3",
@@ -75,10 +91,11 @@ export function Experience({ animationOffset }: { animationOffset?: number }) {
       employmentType: "Internship",
       duration: "Feb 2024 - Jul 2024 · 6 mos",
       bullets: [
-        "Built a tool that is now used daily by risk analysts across IB&M",
-        "Completed my thesis for CBA investigating component library use in Fin-tech applications",
+        "Built the frontend for a tool that is now used daily by risk analysts across IB&M",
+        "Utilised Python Matplotlib, Pandas and prioritary backend packages for thesis data analysis and visualisation",
+        "Completed my university thesis for CBA investigating component library use in Fin-tech applications",
       ],
-      skills,
+      skills: [SKILLS[REACT_SKILL], SKILLS[TS_SKILL], SKILLS[PYTHON_SKILL]],
       firstRole: true,
     },
   ];

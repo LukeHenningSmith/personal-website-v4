@@ -8,6 +8,8 @@ export const DOCKER_SKILL = "dockerSkill";
 export const TAILWINDCSS_SKILL = "tailwindcssSkill";
 export const VITEST_SKILL = "vitestSkill";
 export const VITE_SKILL = "viteSkill";
+export const PLAYWRIGHT_SKILL = "playwrightSkill";
+export const GITHUB_ACTIONS_SKILL = "githubActionsSkill";
 
 export const SKILLS: Record<string, SkillItem> = {
   [TS_SKILL]: {
@@ -57,5 +59,17 @@ export const SKILLS: Record<string, SkillItem> = {
     label: "Vitest",
     imgSrc: "/tech-icons/vitest-logo.svg",
     url: "https://vitest.dev/",
+  },
+  [PLAYWRIGHT_SKILL]: {
+    id: "playwright",
+    label: "Playwright",
+    imgSrc: "/tech-icons/playwright-logo.svg",
+    url: "https://playwright.dev/",
+  },
+  [GITHUB_ACTIONS_SKILL]: {
+    id: "github-actions",
+    label: "GitHub Actions",
+    imgSrc: "/tech-icons/github-logo.svg",
+    url: "https://github.com/features/actions",
   },
 };
