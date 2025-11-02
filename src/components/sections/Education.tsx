@@ -2,6 +2,7 @@ import { ExternalLink } from "lucide-react";
 import { FadeUp } from "../layout/FadeUp";
 import { Button } from "../ui/button";
 import { Section } from "../utility/Section";
+import { ANIMATION_GAP } from "@/constants";
 
 export function Education({ animationOffset }: { animationOffset?: number }) {
   return (
@@ -32,6 +33,9 @@ export function Education({ animationOffset }: { animationOffset?: number }) {
             </div>
           </div>
         </div>
+      </FadeUp>
+
+      <FadeUp delay={(animationOffset ?? 0) + ANIMATION_GAP / 2}>
         <div className="flex gap-2">
           <div className="flex mx-1 w-[60px] align-middle justify-center"></div>
 

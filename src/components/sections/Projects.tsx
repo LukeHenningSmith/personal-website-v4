@@ -16,6 +16,7 @@ import { Button } from "../ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { ANIMATION_GAP } from "@/constants";
 
 type BulletPart = string | { label: string; url: string };
 
@@ -152,8 +153,7 @@ export function Projects({ animationOffset }: { animationOffset?: number }) {
       <FadeUp
         key={project.key}
         delay={
-          (animationOffset ?? 0) +
-          index * ((animationOffset ?? 0) / PROJECTS.length)
+          (animationOffset ?? 0) + index * (ANIMATION_GAP / PROJECTS.length)
         }
       >
         <div className="flex flex-col gap-2 text-muted-foreground">

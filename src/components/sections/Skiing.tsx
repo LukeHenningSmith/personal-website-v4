@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FadeUp } from "../layout/FadeUp";
 import { Section } from "../utility/Section";
+import { ANIMATION_GAP } from "@/constants";
 
 type SkiImage = {
   src: string;
@@ -87,11 +88,15 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
         <p className="my-2 text-muted-foreground">
           The unique places I have visited:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          {IMAGES.map((img, i) => (
+      </FadeUp>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {IMAGES.map((img, i) => (
+          <FadeUp
+            delay={(animationOffset ?? 0) + (ANIMATION_GAP / IMAGES.length) * i}
+            key={img.src}
+          >
             <div
-              key={img.src}
-              className="group relative h-40 sm:h-56 w-full overflow-hidden rounded-lg cursor-pointer hover:scale-103 transition-transform duration-300"
+              className="group relative h-40 sm:h-56 w-full overflow-hidden rounded-lg cursor-pointer hover:scale-101 transition-transform duration-300"
               onClick={() => handleOpen(i)}
               role="button"
               tabIndex={0}
@@ -116,9 +121,9 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
                 <div className="text-xs opacity-90 drop-shadow">{img.time}</div>
               </div>
             </div>
-          ))}
-        </div>
-      </FadeUp>
+          </FadeUp>
+        ))}
+      </div>
 
       {/* Modal / lightbox for enlarged image */}
       {openIndex !== null ? (
@@ -160,7 +165,7 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
       ) : null}
 
       {/* bucket list */}
-      <FadeUp delay={(animationOffset ?? 0) + 80}>
+      <FadeUp delay={(animationOffset ?? 0) + ANIMATION_GAP}>
         <div className="mt-6">
           <h3 className="text-primary mb-2">Skiing bucket list</h3>
           <ul className="list-disc pl-5 text-muted-foreground space-y-1">
