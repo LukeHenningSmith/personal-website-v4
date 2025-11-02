@@ -10,6 +10,7 @@ export const VITEST_SKILL = "vitestSkill";
 export const VITE_SKILL = "viteSkill";
 export const PLAYWRIGHT_SKILL = "playwrightSkill";
 export const GITHUB_ACTIONS_SKILL = "githubActionsSkill";
+export const FRAMER_MOTION_SKILL = "framerMotionSkill";
 
 export const SKILLS: Record<string, SkillItem> = {
   [TS_SKILL]: {
@@ -73,5 +74,11 @@ export const SKILLS: Record<string, SkillItem> = {
     imgSrc: "/tech-icons/github-logo-light.svg",
     imgSrcDark: "/tech-icons/github-logo-dark.png",
     url: "https://github.com/features/actions",
+  },
+  [FRAMER_MOTION_SKILL]: {
+    id: "framer-motion",
+    label: "Framer Motion",
+    imgSrc: "/tech-icons/framer-motion-logo.svg",
+    url: "https://www.framer.com/motion/",
   },
 };

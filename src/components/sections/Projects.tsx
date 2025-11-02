@@ -11,6 +11,7 @@ import {
   VITE_SKILL,
   AWS_SKILL,
   PYTHON_SKILL,
+  FRAMER_MOTION_SKILL,
 } from "../utility/skills/constants";
 import { Button } from "../ui/button";
 import { ExternalLink, Github } from "lucide-react";
@@ -92,8 +93,14 @@ export const PROJECTS: ProjectConfig[] = [
         "Built with a focus on performance, animation, mobile support and modern design principles",
       ],
     ],
-    skills: [AWS_SKILL, TS_SKILL, REACT_SKILL, TAILWINDCSS_SKILL],
-    // sourceUrl: "https://github.com/LukeHenningSmith/wyd", //TODO
+    skills: [
+      AWS_SKILL,
+      TS_SKILL,
+      REACT_SKILL,
+      TAILWINDCSS_SKILL,
+      FRAMER_MOTION_SKILL,
+    ],
+    sourceUrl: "https://github.com/LukeHenningSmith/personal-website-v4",
     liveUrl: "https://lukehs.com",
   },
   {
