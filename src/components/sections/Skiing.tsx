@@ -9,7 +9,6 @@ type SkiImage = {
   src: string;
   alt?: string;
   location: string;
-  description?: string;
   time: string;
 };
 
@@ -37,15 +36,12 @@ const IMAGES: SkiImage[] = [
     src: "/skiing-photos/myoko_2019_jan.JPG",
     alt: "Ridge",
     location: "Myoko Kogen, Japan",
-    description: "Powder skiing in snow fall of 1m+ / week",
     time: "Jan 2019",
   },
   {
     src: "/skiing-photos/vermont_2017_dec.JPG",
     alt: "Ridge",
     location: "Vermont, USA",
-    description:
-      "Skiing in a record breaking cold-snap with temperatures below -28°C",
     time: "Dec 2017",
   },
 ];
@@ -141,13 +137,7 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
                   {img.location}
                 </div>
 
-                {img.description && (
-                  <div className="text-xs opacity-90 drop-shadow">
-                    {img.description}
-                  </div>
-                )}
-
-                <div className="text-xs opacity-90 drop-shadow text-muted-foreground">
+                <div className="text-xs opacity-90 drop-shadow text-secondary dark:text-muted-foreground">
                   {img.time}
                 </div>
               </div>
@@ -172,7 +162,8 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
                 openIndex > 0 && handleOpen(openIndex - 1);
               }}
               variant={"ghost"}
-              className="cursor-pointer"
+              className="cursor-pointer text-secondary hover:text-muted-foreground bg-transparent 
+              hover:bg-transparent dark:hover:bg-transparent dark:bg-transparent dark:text-primary dark:hover:text-muted-foreground"
               size={"icon-lg"}
               disabled={openIndex === 0}
             >
@@ -198,23 +189,19 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
             <Button
               variant={"ghost"}
               size={"icon"}
-              className="absolute right-3 top-3 cursor-pointer"
+              className="absolute right-3 top-3 cursor-pointer text-secondary hover:text-muted-foreground bg-transparent 
+              hover:bg-transparent dark:hover:bg-transparent dark:bg-transparent dark:text-primary dark:hover:text-muted-foreground"
               onClick={handleClose}
               aria-label="Close enlarged image"
             >
               ✕
             </Button>
 
-            <div className="p-4 bg-gradient-to-t from-black/60 text-white flex flex-col gap-0.5">
+            <div className="p-4 bg-gradient-to-t from-black/10 text-white flex flex-col gap-0.5">
               <div className="text-lg font-semibold">
                 {IMAGES[openIndex].location}
               </div>
 
-              {IMAGES[openIndex].description && (
-                <div className="text-xs opacity-90 drop-shadow">
-                  {IMAGES[openIndex].description}
-                </div>
-              )}
               <div className="text-sm opacity-90 text-muted-foreground">
                 {IMAGES[openIndex].time}
               </div>
@@ -228,7 +215,8 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
                 openIndex < IMAGES.length - 1 && handleOpen(openIndex + 1);
               }}
               variant={"ghost"}
-              className="cursor-pointer"
+              className="cursor-pointer text-secondary hover:text-muted-foreground bg-transparent 
+              hover:bg-transparent dark:hover:bg-transparent dark:bg-transparent dark:text-primary dark:hover:text-muted-foreground"
               size={"icon-lg"}
               disabled={openIndex === IMAGES.length - 1}
             >
