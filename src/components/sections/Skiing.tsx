@@ -94,8 +94,8 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
     <Section id="skiing" title="Skiing" animationOffset={animationOffset}>
       <FadeUp delay={animationOffset}>
         <p className="my-2 text-muted-foreground">
-          Life-long skiier - recent snowboarder. Some of the places I have
-          visited include:
+          Lifelong skiier - recent snowboarder. Some of my favourite places I
+          have visited:
         </p>
       </FadeUp>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
