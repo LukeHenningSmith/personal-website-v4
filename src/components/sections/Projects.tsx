@@ -100,7 +100,7 @@ export const PROJECTS: ProjectConfig[] = [
       TAILWINDCSS_SKILL,
       FRAMER_MOTION_SKILL,
     ],
-    sourceUrl: "https://github.com/LukeHenningSmith/personal-website-v4",
+    sourceUrl: "https://github.com/LukeHenningSmith/Lukehs.com",
     liveUrl: "https://lukehs.com",
   },
   {
