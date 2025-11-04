@@ -54,8 +54,24 @@ export function Skiing({ animationOffset }: { animationOffset?: number }) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && openIndex !== null) {
+      if (openIndex === null) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
         handleClose();
+        return;
+      }
+      if (e.key === "ArrowLeft") {
+        if (openIndex > 0) {
+          e.preventDefault();
+          handleOpen(openIndex - 1);
+        }
+        return;
+      }
+      if (e.key === "ArrowRight") {
+        if (openIndex < IMAGES.length - 1) {
+          e.preventDefault();
+          handleOpen(openIndex + 1);
+        }
       }
     };
     window.addEventListener("keydown", onKey);
