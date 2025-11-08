@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="2111" height="1008"><svg width="2111" height="1008" viewBox="0 0 2111 1008" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M694.603 219.53C705.997 209.324 723.244 209.324 734.638 219.53L1275.07 703.653C1295.57 722.022 1282.58 755.999 1255.05 755.999H174.192C146.663 755.999 133.67 722.022 154.174 703.653L694.603 219.53Z" fill="white"></path>
-<path d="M1582.63 322.572C1590.42 304.41 1614.56 300.481 1630.19 314.83L2055.07 704.917C2075.51 723.682 2064.58 755.826 2037.76 755.841L1445.37 756.173C1422.97 756.185 1406.6 732.823 1415.11 712.99L1582.63 322.572Z" fill="white"></path>
-<path d="M1121.99 21.7858C1133.75 9.81714 1153.04 9.8171 1164.8 21.7858L1835.93 704.976C1854.57 723.951 1841.12 756 1814.53 756H472.263C445.665 756 432.222 723.951 450.862 704.977L1121.99 21.7858Z" fill="white"></path>
-</svg><style>@media (prefers-color-scheme: light) { :root { filter: contrast(1) brightness(0.1); } }
-@media (prefers-color-scheme: dark) { :root { filter: none; } }
-</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g clip-path="url(#SvgjsClipPath1473)"><rect width="1000" height="1000" fill="#ffffff"></rect><g transform="matrix(0.3789673140691615,0,0,0.3789673140691615,100,309.0004737091426)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="2111" height="1008"><svg width="2111" height="1008" viewBox="0 0 2111 1008" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M694.603 219.53C705.997 209.324 723.244 209.324 734.638 219.53L1275.07 703.653C1295.57 722.022 1282.58 755.999 1255.05 755.999H174.192C146.663 755.999 133.67 722.022 154.174 703.653L694.603 219.53Z" fill="black"></path>
+<path d="M1582.63 322.572C1590.42 304.41 1614.56 300.481 1630.19 314.83L2055.07 704.917C2075.51 723.682 2064.58 755.826 2037.76 755.841L1445.37 756.173C1422.97 756.185 1406.6 732.823 1415.11 712.99L1582.63 322.572Z" fill="black"></path>
+<path d="M1121.99 21.7858C1133.75 9.81714 1153.04 9.8171 1164.8 21.7858L1835.93 704.976C1854.57 723.951 1841.12 756 1814.53 756H472.263C445.665 756 432.222 723.951 450.862 704.977L1121.99 21.7858Z" fill="black"></path>
+</svg></svg></g></g><defs><clipPath id="SvgjsClipPath1473"><rect width="1000" height="1000" x="0" y="0" rx="500" ry="500"></rect></clipPath></defs></svg>
